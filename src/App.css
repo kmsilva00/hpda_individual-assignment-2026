@@ -1,28 +1,113 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: #0f0f23;
+    color: #eee;
+    font-family: sans-serif;
+}
+
 .App {
-    text-align: center;
-    height: 100%;
+    padding: 16px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: hidden;
 }
-#MultiviewContainer{
-    height: 100%;
+
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
 }
+
+.app-title {
+    font-size: 1.2rem;
+    color: #a0aec0;
+    font-weight: 400;
+}
+
+.clearBtn {
+    padding: 6px 16px;
+    border: 1px solid #4a5568;
+    background: transparent;
+    color: #a0aec0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.clearBtn:hover {
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
 .row {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    gap: 10px;
-}
-.col{
-    flex-grow: 1; /* all .col elements have the same importance */
-    flex-basis: 0; /* do not use auto to avoid size depends on content*/
+    gap: 16px;
+    flex: 1;
+    min-height: 0;
 }
 
-/* .row:after {
-    content: "";
-    display: table;
-    clear: both;
+/* Selection summary bar — appears only when items are selected */
+.selection-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 12px;
+    padding: 5px 10px;
+    background: #1a1a2e;
+    border: 1px solid #2d3748;
+    border-radius: 6px;
+    font-size: 11px;
+    color: #a0aec0;
+    flex-shrink: 0;
+    line-height: 1.4;
 }
-.col2{
-    float: left;
-    width: 50%;
-} */
+
+.selection-count {
+    color: #e74c3c;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.selection-state {
+    white-space: nowrap;
+    color: #cbd5e0;
+}
+
+.selection-state::before {
+    content: '·';
+    margin-right: 12px;
+    color: #4a5568;
+}
+
+.selection-state-label {
+    color: #68d391;
+    font-weight: 600;
+}
+
+.selection-more {
+    color: #718096;
+    font-style: italic;
+}
+
+/* Shared tooltip for both scatterplot and hierarchy */
+.vis-tooltip {
+    position: fixed;
+    display: none;
+    background: #2d3748;
+    border: 1px solid #4a5568;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: #e2e8f0;
+    pointer-events: none;
+    z-index: 9999;
+    max-width: 220px;
+    line-height: 1.6;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}

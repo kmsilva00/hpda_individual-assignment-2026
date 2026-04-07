@@ -1,3 +1,13 @@
-.scatterplotDivContainer{
-    height: 100%;
+.scatterplotDivContainer {
+    flex: 1;
+    min-height: 0;
+    min-width: 0;
+    background: #1a1a2e;
+    border-radius: 8px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.markerCircle {
+    cursor: pointer;
 }

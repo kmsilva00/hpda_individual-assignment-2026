@@ -1,0 +1,39 @@
+.hierarchyWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 0;
+    min-width: 0;
+}
+
+.layoutToggle {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.layoutToggle button {
+    padding: 6px 16px;
+    border: 1px solid #4a5568;
+    background: transparent;
+    color: #a0aec0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.layoutToggle button.active {
+    background: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}
+
+.hierarchyDivContainer {
+    flex: 1;
+    min-height: 0;
+    background: #1a1a2e;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
