@@ -1,0 +1,20 @@
+Setup & data
+
+"Set up a React + Redux + D3.js project from the to visualize the UCI Communities and Crime dataset."
+"The CSV has no header row — prepend the 128 UCI column names to make it parseable by PapaParse."
+
+Scatterplot
+3. "Build a D3 scatterplot class showing medIncome vs ViolentCrimesPerPop with axes, transitions, and the join() enter/update/exit pattern."
+4. "Add a d3.brush 2D selection to the scatterplot that dispatches selected communities to the Redux store."
+5. "Highlight selected dots and dim the rest when selectedItems changes in Redux."
+Hierarchy
+6. "Build a D3 hierarchy class with a two-level Treemap (state → community), sized by population and colored by crime rate using a red-yellow-green scale."
+7. "Add a Sunburst layout to the same hierarchy class, toggleable via React state."
+8. "Add click and Ctrl+Click selection on hierarchy nodes that dispatches to Redux and highlights matching dots in the scatterplot."
+Bugs
+9. Crash fix "Clicking individual scatterplot dots (not brushing) crashes the app and requires a full server restart — find and fix the root cause."
+10. "List potential fixes the infinite loop where clearBrush() re-fires the brush end event causing repeated Redux dispatches."
+11. "Add a selection info bar above the charts listing selected community names grouped by state."
+12. "Add hover tooltips on scatterplot dots and hierarchy nodes showing community name and normalized attribute values."
+1. Hover synchronization - "Hovering a scatterplot dot should highlight the matching node in the hierarchy, and vice versa — currently only click works."
+4. Selection identity panel - "Add a non-intrusive visualization technique so I can identify which community and state I'm selecting across all three views, justified by visualization design principles."
